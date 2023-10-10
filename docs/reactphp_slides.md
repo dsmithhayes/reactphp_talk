@@ -10,7 +10,7 @@ I am Dave Smith-Hayes. _(photo not found)_
 
 * Software Developer for a Label Company
 * PHP Knower
-* Node.JS Enjoyer
+* Node.js Enjoyer
 * C Apologist
 * Offensive IPA Connoisseur
 
@@ -36,6 +36,13 @@ From their Website:
 
 Think Node.js, but in _pure PHP_.
 
+* There is an [Event Loop](https://reactphp.org/event-loop/)
+* There are [Streams](https://reactphp.org/stream/)
+* There is [Async](https://reactphp.org/async/) and [Promises](https://reactphp.org/promise/)
+* There is [a TCP Socket API](https://reactphp.org/socket/)
+  * There is [an HTTP Server](https://reactphp.org/http/)!
+* There is a [UDP Socket API](https://reactphp.org/datagram/)
+
 ---
 
 # PHP As We Know it
@@ -51,12 +58,6 @@ Typical PHP setup:
 # PHP As We Know It
 
 > Diagram of the Client to server to FPM
-
----
-
-# An Aside about PSR
-
-PHP-FIG interfaces for different, common, patterns.
 
 ---
 
@@ -82,11 +83,28 @@ $ composer require react/stream react/http react/promise
 
 ---
 
-# SlimPHP
+# An Aside about PSR
 
-## What is SlimPHP?
+* PHP Standards Recommendation
+* Drafted, voted on by **PHP-FIG**
+* Common Patterns Include:
+  * Autoloading PHP Code (_PSR-1_)
+  * HTTP Message Interfaces (_PSR-7_)
+  * Logging Interfaces (_PSR-3_)
+  * Container Interfaces (_PSR-11_)
+  * Coding Style Guides (_PSR-1_)
 
-An awesome PHP microframework.
+---
+
+# What is SlimPHP?
+
+* A PHP Microframework for HTTP Applications
+  * Think Express.js
+  * Think Sinatra
+  * Think Flask
+* Uses a Middleware Interface
+* Uses a Container Interface
+* Lets you define routes with callbacks
 
 ## Installing
 

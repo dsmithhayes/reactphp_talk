@@ -25,13 +25,16 @@ $app->get('/talk/{file}', function (Request $req, Response $res, array $args) {
 
     foreach ($dir_contents as $file) {
         if ($file === $args['file']) {
+            $full_path = $static_path . '/' . $file;
+
             // get extension, assume content type
             $content_type = match (pathinfo($file, PATHINFO_EXTENSION)) {
                 'jpg' => 'image/jpg',
                 default => 'text/html',
             };
 
-            $file_contents = file_get_contents($static_path . '/' . $file);
+            printf("Serving: %s\n", $file);
+            $file_contents = file_get_contents($full_path);
             $res->getBody()->write($file_contents);
 
             return $res->withHeader('Content-Type', $content_type);
