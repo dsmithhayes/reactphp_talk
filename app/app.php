@@ -19,6 +19,21 @@ $app->get('/', function (Request $req, Response $res) {
     return $res->withHeader('Content-Type', 'application/json');
 });
 
+$app->get('/random', function (Request $req, Response $res) {
+    $data = [ 'number' => rand(0, 100) ];
+    $res->getBody()->write(json_encode($data));
+    return $res->withHeader('Content-Type', 'application/json');
+});
+
+$random_number = rand(0, 10);
+$app->post('/random/guess', function (Request $req, Response $res) {
+    // get the number
+
+    // match it
+
+    // fail or succeed
+});
+
 $app->get('/talk/{file}', function (Request $req, Response $res, array $args) {
     $static_path = __DIR__ . '/../docs';
     $dir_contents = scandir($static_path);

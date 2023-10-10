@@ -50,6 +50,7 @@ Think Node.js, but in _pure PHP_.
 Typical PHP setup:
 
 * NGiNX
+  * (_or Apache, yuck_)
 * PHP-FPM
 * Lots of Configuration
 
@@ -57,15 +58,21 @@ Typical PHP setup:
 
 # PHP As We Know It
 
-> Diagram of the Client to server to FPM
+
 
 ---
 
 # What is Async?
 
-Based around an Event Loop. Letting the operating system handle things outside the main thread. waiting for the loop to come back around and handle the response from the OS.
+* Not quite _parallelism_
+* Not quite _theading_
+* Not waiting for the response of a function/method (_synchronous, blocking_)
 
-Not necessarily parallelism though it can do that and does feel that way.
+---
+
+# What is Async?
+
+* "_You take this and do it, I'll handle the result later._"
 
 ---
 
@@ -78,8 +85,6 @@ $ composer require react/stream react/http react/promise
 ---
 
 # HTTP Server in ReactPHP
-
-> Example of the basic HTTP Server
 
 ---
 
@@ -98,7 +103,7 @@ $ composer require react/stream react/http react/promise
 
 # What is SlimPHP?
 
-* A PHP Microframework for HTTP Applications
+* [A PHP Microframework](https://www.slimframework.com/) for HTTP Applications
   * Think Express.js
   * Think Sinatra
   * Think Flask
@@ -122,7 +127,7 @@ $ composer require slim/slim slim/psr7
 
 # Why?
 
-Why not?
+Why not? It's sick.
 
 ---
 
@@ -134,9 +139,12 @@ Why not?
 
 ---
 
-# PHP-PM
+# PPM
 
-I figured I should mention an actual project that uses ReactPHP to manage processes for different application frameworks like Laravel.
+* [_PHP Process Manager_](https://github.com/php-pm/php-pm)
+* Pure PHP Process Manager
+* Runs all the Popular Frameworks
+* Built with **ReactPHP**
 
 ---
 
