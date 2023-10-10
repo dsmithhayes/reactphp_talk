@@ -1,0 +1,18 @@
+version: '3.0'
+
+services:
+  database:
+    image: mariadb:latest
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: SomeRootPassword1!
+      MYSQL_DATABASE: somedatabase
+      MYSQL_USER: someuser
+      MYSQL_PASSWORD: Password1!
+    volumes:
+      - react_php_database:/var/lib/mysql
+
+volumes:
+  react_php_database:
+

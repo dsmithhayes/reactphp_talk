@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "marp": "marp"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^3.3.1"
+  }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "dsmithhayes/reactphp_demos",
+    "description": "A simple example of ReactPHP servers.",
+    "require": {
+        "react/stream": "^1.3",
+        "react/promise": "^3.0",
+        "react/http": "^1.9",
+        "slim/slim": "^4.12",
+        "slim/psr7": "^1.6",
+        "ext-pdo": "*"
+    },
+    "authors": [
+        {
+            "name": "Dave Smith-Hayes",
+            "email": "me@davesmithhayes.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dave\\ReactDemo\\": "src/"
+        }
+    },
+    "scripts": {
+        "http-plaintext": "php http_server.php"
+    }
+}
