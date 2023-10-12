@@ -16,7 +16,7 @@ I am Dave Smith-Hayes. _(photo not found)_
 
 ---
 
-![bg width:750px](assets/my_php_meme.jpg)
+![bg width:750px](./my_php_meme.jpg)
 
 ---
 
@@ -44,7 +44,7 @@ img[alt~="top-right"] {
 }
 </style>
 
-![top-right](assets/reactphp_logo.png)
+![top-right](./reactphp_logo.png)
 
 Think Node.js, but in _pure PHP_.
 
@@ -77,7 +77,7 @@ img[alt~="diagram-image"] {
 }
 </style>
 
-![diagram-image](assets/lemp_basic.png)
+![diagram-image](./lemp_basic.png)
 
 ---
 
@@ -172,7 +172,7 @@ img[alt~="top-right"] {
 }
 </style>
 
-![top-right](assets/ppm_logo.png)
+![top-right](./ppm_logo.png)
 
 * [_PHP Process Manager_](https://github.com/php-pm/php-pm)
 * Pure PHP Process Manager
