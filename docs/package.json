@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "marp": "marp"
+    "build": "marp reactphp_slides.md -o slides.html"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "^3.3.1"
