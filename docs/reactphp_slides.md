@@ -91,11 +91,13 @@ img[alt~="diagram-image"] {
 
 # What is Async?
 
-* "_You take this and do it, I'll handle the result later._"
+* "_You take this and do it, I'll come back for the result._"
 
 ---
 
-# Getting Started
+# Getting Started with ReactPHP
+
+Install it with Composer.
 
 ```bash
 $ composer require react/stream react/http react/promise
@@ -189,4 +191,7 @@ img[alt~="top-right"] {
 **Email** - me@davesmithhayes.com
 **Fediverse** - @davesh@hachyderm.io
 **Github** - github.com/dsmithhayes
-**Gitlab** - gitlab.com/dsmithhayes
+
+## This talk
+
+github.com/dsmithhayes/reactphp_talk.git
