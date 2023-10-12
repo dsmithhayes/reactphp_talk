@@ -24,7 +24,6 @@ class HttpServerWrapper
 
         $server->on('error', function (\Exception $e) {
             printf($e->getMessage() . "\n");
-            printf($e->getTraceAsString());
         });
 
         $uri = $this->host . ':' . $this->port;
