@@ -27,10 +27,10 @@ class HttpServerWrapper
             printf($e->getTraceAsString());
         });
 
-        $uri = $this->host . $this->port;
+        $uri = $this->host . ':' . $this->port;
         $socket = new SocketServer($uri);
         $server->listen($socket);
 
-        printf("Listening on 8080\n");
+        printf("Listening on %s\n", $uri);
     }
 }

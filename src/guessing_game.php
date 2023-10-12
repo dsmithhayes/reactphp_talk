@@ -2,6 +2,7 @@
 
 require_once 'vendor/autoload.php';
 
+use Dave\HttpServer\HttpServerWrapper;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
@@ -32,4 +33,5 @@ $app->get('/random/number', function (Request $req, Response $res) use ($random_
     return $res->withHeader('Content-Type', 'application/json');
 });
 
-return $app;
+$server = new HttpServerWrapper($app, '127.0.0.1', '8082');
+$server->run();
