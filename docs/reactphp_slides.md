@@ -34,6 +34,18 @@ From their Website:
 
 # ReactPHP Overview
 
+<style>
+img[alt~="top-right"] {
+  position: absolute;
+  top: 150px;
+  right: 250px;
+  width: 200px;
+  height: auto;
+}
+</style>
+
+![top-right](./reactphp_logo.png)
+
 Think Node.js, but in _pure PHP_.
 
 * There is an [Event Loop](https://reactphp.org/event-loop/)
@@ -58,7 +70,14 @@ Typical PHP setup:
 
 # PHP As We Know It
 
-![bg width:750px]('./lemp_basic.png')
+<style>
+img[alt~="diagram-image"] {
+  width: 750px;
+  height: auto;
+}
+</style>
+
+![diagram-image](./lemp_basic.png)
 
 ---
 
@@ -141,6 +160,18 @@ Why not? It's sick.
 
 # PPM
 
+<style>
+img[alt~="top-right"] {
+  position: absolute;
+  top: 150px;
+  right: 250px;
+  width: 200px;
+  height: auto;
+}
+</style>
+
+![top-right](./ppm_logo.png)
+
 * [_PHP Process Manager_](https://github.com/php-pm/php-pm)
 * Pure PHP Process Manager
 * Runs all the Popular Frameworks
@@ -149,3 +180,13 @@ Why not? It's sick.
 ---
 
 # FIN
+
+---
+
+# Find Me
+
+**Blog** - davesmithhayes.com
+**Email** - me@davesmithhayes.com
+**Fediverse** - @davesh@hachyderm.io
+**Github** - github.com/dsmithhayes
+**Gitlab** - gitlab.com/dsmithhayes

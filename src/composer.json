@@ -17,7 +17,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Dave\\ReactDemo\\": "src/"
+            "Dave\\HttpServer\\": "classes/"
         }
     },
     "scripts": {

@@ -7,6 +7,7 @@
 
 require 'vendor/autoload.php';
 
+use Dave\HttpServer\StaticServer;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
@@ -19,44 +20,31 @@ $app->get('/', function (Request $req, Response $res) {
     return $res->withHeader('Content-Type', 'application/json');
 });
 
-$app->get('/random', function (Request $req, Response $res) {
-    $data = [ 'number' => rand(0, 100) ];
+$random_number = rand(0, 10);
+$app->post('/random/guess/{number}', function (Request $req, Response $res, array $args) use ($random_number) {
+    $res = $res->withHeader('Content-Type', 'application/json');
+    $guess = $args['number'];
+
+    if ($guess == $random_number) {
+        $data = [ 'success' => true ];
+        $res->getBody()->write(json_encode($data));
+        return $res->withHeader('X-Success', 'true');
+    }
+
+    $data = [ 'success' => false ];
+    $res->getBody()->write(json_encode($data));
+    return $res
+        ->withStatus(400)
+        ->withHeader('X-Success', 'false');
+});
+
+$app->get('/random/number', function (Request $req, Response $res) use ($random_number) {
+    $data = [ 'number' => $random_number ];
     $res->getBody()->write(json_encode($data));
     return $res->withHeader('Content-Type', 'application/json');
 });
 
-$random_number = rand(0, 10);
-$app->post('/random/guess', function (Request $req, Response $res) {
-    // get the number
-
-    // match it
-
-    // fail or succeed
-});
-
-$app->get('/talk/{file}', function (Request $req, Response $res, array $args) {
-    $static_path = __DIR__ . '/../docs';
-    $dir_contents = scandir($static_path);
-
-    foreach ($dir_contents as $file) {
-        if ($file === $args['file']) {
-            $full_path = $static_path . '/' . $file;
-
-            // get extension, assume content type
-            $content_type = match (pathinfo($file, PATHINFO_EXTENSION)) {
-                'jpg' => 'image/jpg',
-                default => 'text/html',
-            };
-
-            printf("Serving: %s\n", $file);
-            $file_contents = file_get_contents($full_path);
-            $res->getBody()->write($file_contents);
-
-            return $res->withHeader('Content-Type', $content_type);
-        }
-    }
-
-    throw new Exception("Unable to find file: " . $args['file']);
-});
+$staticServer = new StaticServer(__DIR__ . '/../docs');
+$app->get('/talk/{file}', $staticServer);
 
 return $app;
