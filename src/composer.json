@@ -17,7 +17,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "\\Dave\\HttpServer\\": "classes/"
+            "Dave\\HttpServer\\": "classes/"
         }
     },
     "scripts": {
