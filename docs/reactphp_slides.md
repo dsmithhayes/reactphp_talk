@@ -58,7 +58,7 @@ Typical PHP setup:
 
 # PHP As We Know It
 
-
+![bg width:750px]('./lemp_basic.png')
 
 ---
 
