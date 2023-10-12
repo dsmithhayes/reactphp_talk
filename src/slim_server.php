@@ -6,7 +6,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use React\Http\HttpServer;
 use React\Socket\SocketServer;
 
-$app = require 'app.php';
+$app = require_once 'app.php';
 
 $server = new HttpServer(function (Request $request) use ($app) {
     return $app->handle($request);
